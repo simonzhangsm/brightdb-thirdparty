@@ -260,7 +260,7 @@ class DownloadManager:
                         '-o',
                         file_path,
                         '-L',  # follow redirects
-                        '--silent',
+                        # '--silent',
                         '--show-error',
                         '--location',
                         effective_url]

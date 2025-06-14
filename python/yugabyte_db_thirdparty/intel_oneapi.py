@@ -44,7 +44,7 @@ ONEAPI_DEFAULT_BASE_DIR = '/opt/intel/oneapi'
 DEFAULT_PACKAGE_TAG = 'v2025.0-1738320070'
 
 # The directory where we install YugabyteDB-packaged Intel oneAPI directories.
-YB_INTEL_ONEAPI_PACKAGE_PARENT_DIR = '/opt/yb-build/intel-oneapi'
+YB_INTEL_ONEAPI_PACKAGE_PARENT_DIR = 'build/intel-oneapi'
 
 VERSION_RE = re.compile(r'^[\d.]+$')
 
@@ -459,8 +459,8 @@ def is_package_build_mode_enabled() -> bool:
 def get_disallowed_include_dir() -> str:
     # Do not allow use of include files from the wrong parent directory.
     if is_package_build_mode_enabled():
-        # We should be using /opt/intel, not /opt/yb-build/intel-oneapi
+        # We should be using /opt/intel, not build/intel-oneapi
         return YB_INTEL_ONEAPI_PACKAGE_PARENT_DIR
     else:
-        # We should be using /opt/yb-build/intel-oneapi, not /opt/intel.
+        # We should be using build/intel-oneapi, not /opt/intel.
         return ONEAPI_DEFAULT_BASE_DIR

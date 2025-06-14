@@ -1242,7 +1242,7 @@ class Builder(BuilderInterface):
         ]
 
     def perform_pre_build_steps(self, dep: Dependency) -> None:
-        log("")
+        log("perform_pre_build_steps: %s", dep.name)
         colored_log(YELLOW_COLOR, SEPARATOR)
         colored_log(YELLOW_COLOR, "Building %s (%s)", dep.name, self.build_type)
         colored_log(YELLOW_COLOR, SEPARATOR)

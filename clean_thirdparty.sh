@@ -100,10 +100,11 @@ done
 if "$clean_all"; then
   exclusions=(
     '*.sw?'
-    venv/
+    venv*/
     .vscode/
     .mypy_cache/
     __pycache__/
+    logs/
   )
   if ! "$delete_downloads"; then
     exclusions+=( download/ )

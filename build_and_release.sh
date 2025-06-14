@@ -102,7 +102,7 @@ if [[ $OSTYPE == darwin* ]]; then
     autoconf
     automake
     bash
-    cmake
+    # cmake
     libtool
     pkg-config
   )
@@ -155,7 +155,7 @@ tools_to_show_versions=(
   autoconf
   automake
   autoreconf
-  cmake
+  # cmake
   pkg-config
   "${PYTHON:-python3}"
 )
@@ -175,6 +175,7 @@ for tool_name in "${tools_to_show_versions[@]}"; do
 done
 
 detect_cmake_version
+echo "cmake_version:$cmake_version"
 # We need to avoid using CMake 3.19.1 and 4.x.
 if [[ $OSTYPE == darwin* && ($cmake_version == 3.19.1 || $cmake_version == 4.*) ]]; then
   install_cmake_on_macos
@@ -229,7 +230,7 @@ to_append="-$YB_THIRDPARTY_ARCHIVE_NAME_SUFFIX"
 archive_dir_name+=$to_append
 tag+=$to_append
 
-build_dir_parent=/opt/yb-build/thirdparty
+build_dir_parent=build
 repo_dir=$build_dir_parent/$archive_dir_name
 
 ( set -x; git remote -v )

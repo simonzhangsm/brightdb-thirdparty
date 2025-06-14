@@ -286,7 +286,7 @@ def parse_cmd_line_args() -> argparse.Namespace:
     parser.add_argument(
         '--intel-oneapi-base-dir',
         help="Explicitly specify the base directory where Intel oneAPI is installed. This is "
-             "usually a directory under /opt/yb-build/intel-oneapi.")
+             "usually a directory under build/intel-oneapi.")
 
     parser.add_argument(
         '--skip-build-invocations',

@@ -39,7 +39,7 @@ while [[ $# -gt 0 ]]; do
 done
 activate_virtualenv
 
-log_dir=$HOME/logs
+log_dir="${YB_THIRDPARTY_DIR}/logs"
 mkdir -p "${log_dir}"
 log_file_name=build_thirdparty
 latest_log_links=( "build_thirdparty_latest.log" )

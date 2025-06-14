@@ -325,14 +325,14 @@ class LibTestLinux(LibTestBase):
             "^\tlinux-vdso",
             "^\t/lib64/",
             "^\t/lib/ld-linux-.*",
-            "^\t/opt/yb-build/brew/linuxbrew",
+            "^\tbuild/brew/linuxbrew",
             "^\tstatically linked",
             "^\tnot a dynamic executable",
             "ldd: warning: you do not have execution permission",
             "^.* => /lib64/",
             "^.* => /lib/",
             "^.* => /usr/lib/x86_64-linux-gnu/",
-            "^.* => /opt/yb-build/brew/linuxbrew",
+            "^.* => build/brew/linuxbrew",
             f"^.* => {re.escape(YB_THIRDPARTY_DIR)}"
         ]
 

@@ -143,9 +143,9 @@ def ensure_toolchain_installed(
     toolchain_url = get_toolchain_url(toolchain_type)
 
     if toolchain_type.startswith('llvm'):
-        parent_dir = '/opt/yb-build/llvm'
+        parent_dir = 'build/llvm'
     elif toolchain_type == 'linuxbrew':
-        parent_dir = '/opt/yb-build/brew'
+        parent_dir = 'build/brew'
     else:
         raise RuntimeError(
             f"We don't know where to install toolchain of type f{toolchain_type}")

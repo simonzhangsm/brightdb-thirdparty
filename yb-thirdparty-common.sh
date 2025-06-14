@@ -42,17 +42,18 @@ compute_sha256sum() {
 }
 
 activate_virtualenv() {
-  if [[ ! -d $YB_THIRDPARTY_DIR/venv ]]; then
-    "${PYTHON:-python3}" -m venv "$YB_THIRDPARTY_DIR/venv"
+  VIRTUALVENV_DIR=venv-${YB_TARGET_ARCH}
+  if [[ ! -d $YB_THIRDPARTY_DIR/${VIRTUALVENV_DIR} ]]; then
+    "${PYTHON:-python3}" -m venv "$YB_THIRDPARTY_DIR/${VIRTUALVENV_DIR}"
   fi
   set +u
   # shellcheck disable=SC1090
-  . "$YB_THIRDPARTY_DIR/venv/bin/activate"
+  . "$YB_THIRDPARTY_DIR/${VIRTUALVENV_DIR}/bin/activate"
   set -u
   (
     set -x
     cd "$YB_THIRDPARTY_DIR"
-    pip3 install --quiet -r requirements_frozen.txt
+    pip3 install -r requirements_frozen.txt
   )
 }
 
