@@ -22,13 +22,14 @@ class ZLibDependency(Dependency):
     def __init__(self) -> None:
         super(ZLibDependency, self).__init__(
             name='zlib',
-            version='1.2.13-yb-1',
-            url_pattern='https://github.com/yugabyte/zlib/archive/refs/tags/v{0}.tar.gz',
+            version='1.3.1',
+            url_pattern='https://zlib.net/zlib-{0}.tar.gz',
             build_group=BuildGroup.COMMON)
         self.copy_sources = True
 
     def build(self, builder: BuilderInterface) -> None:
         with EnvVarContext(TEST_LDFLAGS='-L. libz.a -fuse-ld=lld'):
+            builder.extra_commands.append('sed -i.bak \'/^all:/s/ example minigzip//\' Makefile')
             builder.build_with_configure(dep=self)
 
     def get_additional_ld_flags(self, builder: 'BuilderInterface') -> List[str]:
