@@ -49,7 +49,7 @@ class DiskANNDependency(Dependency):
 
         # Original directory: /opt/intel/oneapi/mkl/2024.1/lib (3+ GB size)
         # YugabyteDB-packaged directory:
-        # /opt/yb-build/intel-oneapi/yb-intel-oneapi-v2024.1-1714789365/mkl/2024.1/lib (621 MB)
+        # build/intel-oneapi/yb-intel-oneapi-v2024.1-1714789365/mkl/2024.1/lib (621 MB)
         # Packaged libraries:
         #   - libmkl_core.a (402 MB, the largest by far)
         #   - libmkl_core.so
@@ -67,14 +67,14 @@ class DiskANNDependency(Dependency):
         # /opt/intel/oneapi/mkl/2024.1/include (22 MB size)
         #
         # YugabyteDB-packaged directory:
-        # /opt/yb-build/intel-oneapi/yb-intel-oneapi-v2024.1-1714789365/mkl/2024.1/include (6 MB)
+        # build/intel-oneapi/yb-intel-oneapi-v2024.1-1714789365/mkl/2024.1/include (6 MB)
         self.intel_mkl_include_dir = self.oneapi_installation.get_mkl_include_dir()
         log("intel_mkl_include_dir: %s", self.intel_mkl_include_dir)
 
         # Original directory: /opt/intel/oneapi/compiler/2024.1/lib (1 GB+ size)
         #
         # YugabyteDB-packaged directory:
-        # /opt/yb-build/intel-oneapi/yb-intel-oneapi-v2024.1-1714789365/compiler/2024.1/lib
+        # build/intel-oneapi/yb-intel-oneapi-v2024.1-1714789365/compiler/2024.1/lib
         #
         # In the YugabyteDB-packaged archive, this directory contains libraries:
         # libiomp5.a  libiomp5.dbg  libiomp5.so
@@ -84,7 +84,7 @@ class DiskANNDependency(Dependency):
 
         # Original directory: /opt/intel/oneapi/compiler/2024.1/opt/compiler/include
         # Possible path inside YugabyteDB-packaged Intel oneAPI directory:
-        # /opt/yb-build/intel-oneapi/yb-intel-oneapi-v2024.1-1714789365/compiler/2024.1/opt/compiler/include
+        # build/intel-oneapi/yb-intel-oneapi-v2024.1-1714789365/compiler/2024.1/opt/compiler/include
         self.openmp_include_dir = self.oneapi_installation.get_openmp_include_dir()
         log("openmp_include_dir: %s", self.openmp_include_dir)
 

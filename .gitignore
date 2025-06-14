@@ -12,7 +12,6 @@ __pycache__/
 *.rej
 *.sw?
 build/
-download/
 google-styleguide*
 install_manifest.txt
 installed_*/

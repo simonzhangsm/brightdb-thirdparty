@@ -19,7 +19,7 @@ class BisonDependency(Dependency):
     def __init__(self) -> None:
         super(BisonDependency, self).__init__(
             name='bison',
-            version='3.4.1',
+            version='3.8.2',
             url_pattern='https://ftp.gnu.org/gnu/bison/bison-{0}.tar.gz',
             build_group=BuildGroup.COMMON,
             license='GPL-3.0')
